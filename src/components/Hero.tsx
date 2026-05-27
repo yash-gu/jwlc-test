@@ -1,7 +1,7 @@
 import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
-  const heroImages = import.meta.glob('./Screenshot*', { eager: true, as: 'url' }) as Record<string, string>;
+  const heroImages = import.meta.glob('./Screenshot*', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
   const heroImage = Object.values(heroImages)[0];
   return (
     <section
