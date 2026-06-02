@@ -29,7 +29,7 @@ const stories = [
     name: 'Mr. Manpreet Singh Chhabra',
     tag: 'Jaipur Wellness Community',
     stats: [
-      { icon: '⚖️', text: '75+ KG Weight Loss' },
+      { icon: '⚖️', text: '70+ KG Weight Loss' },
       { icon: '🚶', text: 'Walks Comfortably' },
       { icon: '✈️', text: 'Travels Freely' },
       { icon: '💼', text: 'Works Efficiently' },
