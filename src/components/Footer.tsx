@@ -133,9 +133,9 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:contact@jwlc.com" className="flex items-center gap-2 hover:text-jaipur-pink transition-colors">
+                  <a href="mailto:jaipurweightloss@gmail.com" className="flex items-center gap-2 hover:text-jaipur-pink transition-colors">
                     <Mail size={15} className="text-jaipur-gold flex-shrink-0" />
-                    contact@jwlc.com
+                    jaipurweightloss@gmail.com
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
@@ -173,7 +173,7 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <span className="text-jaipur-gold text-xs">✦</span>
                 <p className="text-gray-500 text-sm font-ui">
-                  &copy; {currentYear} JWLC. All rights reserved.
+                  &copy; {currentYear} JaipurWellnessCommunity. All rights reserved.
                 </p>
                 <span className="text-jaipur-gold text-xs">✦</span>
               </div>

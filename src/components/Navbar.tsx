@@ -51,7 +51,7 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
             </div>
             <div className="flex flex-col leading-none">
               <span className="text-lg font-bold font-serifPremium bg-gradient-to-r from-jaipur-pink-deep via-jaipur-pink to-jaipur-gold bg-clip-text text-transparent group-hover:opacity-80 transition-opacity">
-                JWLC
+                JaipurWellnessCommunity
               </span>
               <span className="text-[9px] uppercase tracking-widest text-jaipur-pink/70 dark:text-jaipur-pink-light/60 font-ui">
                 Pink City Wellness

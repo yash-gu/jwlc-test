@@ -72,10 +72,10 @@ export default function Contact() {
       bg: 'bg-amber-50 dark:bg-jaipur-gold/10',
     },
     {
-      href: 'mailto:contact@jwlc.com',
+      href: 'mailto:jaipurweightloss@gmail.com',
       icon: Mail,
       label: 'Email',
-      value: 'contact@jwlc.com',
+      value: 'jaipurweightloss@gmail.com',
       color: 'from-jaipur-terracotta to-jaipur-pink',
       bg: 'bg-rose-50 dark:bg-jaipur-terracotta/10',
     },
