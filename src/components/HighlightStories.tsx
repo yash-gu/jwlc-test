@@ -2,6 +2,7 @@ const stories = [
   {
     id: 1,
     image: '/hilight/h1.jpeg',
+    imageb: '/hilight/h1b.jpeg',
     name: 'Mrs. Dipali',
     tag: 'School Teacher · Pune',
     stats: [
@@ -47,6 +48,7 @@ const stories = [
   {
     id: 3,
     image: '/hilight/h2.jpeg',
+    imageb: '/hilight/h2b.jpeg',
     name: 'Mr. Mayank',
     tag: 'USA-based IT Professional',
     stats: [
@@ -107,13 +109,20 @@ export default function HighlightStories() {
               className="rounded-3xl overflow-hidden bg-white dark:bg-[#2a1018] border border-jaipur-pink/15 shadow-sandstone hover:shadow-sandstone-hover hover:-translate-y-1 transition-all duration-500 animate-in fade-in flex flex-col"
               style={{ animationDelay: `${index * 120}ms` }}
             >
-              {/* ── Full image — no crop, no overlay, fully visible ── */}
-              <div className="w-full">
+              {/* ── Image(s) — fully visible ── */}
+              <div className={`w-full ${(story as any).imageb ? 'grid grid-cols-2' : ''}`}>
                 <img
                   src={story.image}
                   alt={story.name}
                   className="w-full h-auto block"
                 />
+                {(story as any).imageb && (
+                  <img
+                    src={(story as any).imageb}
+                    alt={`${story.name} — after`}
+                    className="w-full h-auto block"
+                  />
+                )}
               </div>
 
               {/* ── Card body ── */}
