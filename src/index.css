@@ -1,3 +1,6 @@
+/* Import premium serif for headings (Cinzel & Playfair Display) and Inter for UI */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,25 +10,215 @@
     scroll-behavior: smooth;
   }
 
+  :root {
+    /* Pink City — Jaipur Palette */
+    --jaipur-pink:          #E8536A;
+    --jaipur-pink-deep:     #C93B55;
+    --jaipur-pink-light:    #FADADD;
+    --jaipur-pink-pale:     #FFF0F2;
+    --jaipur-terracotta:    #D26953;
+    --jaipur-terracotta-deep: #C15440;
+    --jaipur-rose:          #FCEBE6;
+    --jaipur-gold:          #D4AF37;
+    --jaipur-gold-warm:     #E5A93C;
+    --jaipur-saffron:       #FF9933;
+    --jaipur-dark:          #2C1E1A;
+    --jaipur-light:         #FFF5F7;
+    --jaipur-cream:         #FAF0F2;
+  }
+
   body {
-    @apply bg-white dark:bg-slate-900 text-gray-900 dark:text-white transition-colors duration-300;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--jaipur-light);
+    color: var(--jaipur-dark);
+    transition: color 0.2s ease, background-color 0.2s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', 'Playfair Display', serif;
+    color: var(--jaipur-dark);
   }
 }
 
+/* ─── Hawa Mahal Jali (lattice) background pattern ─── */
+body {
+  background-color: var(--jaipur-light);
+  background-image:
+    /* Hawa Mahal jali — fine diamond lattice in blush pink */
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 18px,
+      rgba(232, 83, 106, 0.06) 18px,
+      rgba(232, 83, 106, 0.06) 19px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 18px,
+      rgba(232, 83, 106, 0.06) 18px,
+      rgba(232, 83, 106, 0.06) 19px
+    );
+  background-attachment: fixed;
+}
+
+/* ─── Hawa Mahal SVG silhouette watermark ─── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('/images/hawa-mahal-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 80vw auto;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { background-attachment: scroll; }
+}
+
+/* ─── Utility classes ─── */
+@layer utilities {
+
+  /* Pink City background wrapper */
+  .jaipur-bg {
+    background-color: var(--jaipur-light);
+    color: var(--jaipur-dark);
+  }
+
+  .dark .jaipur-bg {
+    background-color: #1a0d10;
+    color: #fff;
+  }
+
+  /* Hawa Mahal arch clip-path — the iconic multi-tiered arch */
+  .hawa-mahal-arch {
+    clip-path: polygon(
+      0% 100%,
+      0% 40%,
+      5%  35%,
+      10% 28%,
+      15% 22%,
+      20% 18%,
+      25% 15%,
+      30% 13%,
+      35% 11%,
+      40% 9%,
+      45% 7%,
+      50% 5%,
+      55% 7%,
+      60% 9%,
+      65% 11%,
+      70% 13%,
+      75% 15%,
+      80% 18%,
+      85% 22%,
+      90% 28%,
+      95% 35%,
+      100% 40%,
+      100% 100%
+    );
+  }
+
+  /* Rajputana pointed arch */
+  .rajputana-arch {
+    clip-path: polygon(
+      0% 100%,
+      0% 25%,
+      15% 15%,
+      35% 8%,
+      50% 0%,
+      65% 8%,
+      85% 15%,
+      100% 25%,
+      100% 100%
+    );
+  }
+
+  .rajputana-arch-top {
+    clip-path: polygon(
+      0% 100%,
+      0% 30%,
+      10% 20%,
+      25% 12%,
+      35% 8%,
+      50% 0%,
+      65% 8%,
+      75% 12%,
+      90% 20%,
+      100% 30%,
+      100% 100%
+    );
+  }
+
+  /* Pink City sandstone shadows */
+  .shadow-sandstone {
+    box-shadow:
+      0 4px 6px -1px rgba(201, 59, 85, 0.08),
+      0 10px 20px -5px rgba(201, 59, 85, 0.12),
+      0 20px 30px -10px rgba(212, 175, 55, 0.15);
+  }
+
+  .shadow-sandstone-hover:hover {
+    box-shadow:
+      0 10px 20px -2px rgba(201, 59, 85, 0.12),
+      0 20px 35px -5px rgba(201, 59, 85, 0.18),
+      0 30px 50px -12px rgba(212, 175, 55, 0.28);
+  }
+
+  /* Gold glow on hover */
+  .gold-glow-hover:hover {
+    box-shadow:
+      0 0 25px 4px rgba(212, 175, 55, 0.35),
+      0 8px 16px -2px rgba(201, 59, 85, 0.1);
+  }
+
+  /* Pink glow on hover */
+  .pink-glow-hover:hover {
+    box-shadow:
+      0 0 30px 6px rgba(232, 83, 106, 0.3),
+      0 8px 20px -4px rgba(201, 59, 85, 0.2);
+  }
+
+  /* Royal double border */
+  .border-royal-double {
+    border: 4px double var(--jaipur-gold);
+  }
+
+  .border-royal-single {
+    border: 2px solid var(--jaipur-gold);
+  }
+
+  /* Pink City section divider — ornamental */
+  .divider-ornament::before,
+  .divider-ornament::after {
+    content: '✦';
+    color: var(--jaipur-gold);
+    margin: 0 0.5rem;
+  }
+
+  /* Hawa Mahal window frame */
+  .hawa-window {
+    border: 3px solid var(--jaipur-pink);
+    border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+    box-shadow:
+      inset 0 0 20px rgba(232, 83, 106, 0.1),
+      0 0 20px rgba(232, 83, 106, 0.15);
+  }
+}
+
+/* ─── Animations ─── */
 @layer utilities {
   .animate-in {
     animation: slideInFade 0.6s ease-out forwards;
   }
 
   @keyframes slideInFade {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .fade-in {
@@ -33,12 +226,8 @@
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
 
   .slide-in-from-left-4 {
@@ -46,14 +235,8 @@
   }
 
   @keyframes slideInFromLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-40px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
 
   .slide-in-from-right-4 {
@@ -61,14 +244,8 @@
   }
 
   @keyframes slideInFromRight {
-    from {
-      opacity: 0;
-      transform: translateX(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(40px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
 
   .slide-in-from-bottom-4 {
@@ -76,14 +253,8 @@
   }
 
   @keyframes slideInFromBottom {
-    from {
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .slide-in-from-top-2 {
@@ -91,14 +262,8 @@
   }
 
   @keyframes slideInFromTop {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
   .scale-in {
@@ -106,13 +271,66 @@
   }
 
   @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
   }
 }
+
+/* ─── Hawa Mahal decorative section border ─── */
+.hawa-mahal-border {
+  position: relative;
+}
+
+.hawa-mahal-border::before {
+  content: '';
+  display: block;
+  height: 6px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--jaipur-pink) 15%,
+    var(--jaipur-gold) 35%,
+    var(--jaipur-pink-deep) 50%,
+    var(--jaipur-gold) 65%,
+    var(--jaipur-pink) 85%,
+    transparent 100%
+  );
+  border-radius: 3px;
+  margin-bottom: 0;
+}
+
+/* ─── Pink City card style ─── */
+.pink-city-card {
+  background: linear-gradient(135deg, #fff5f7 0%, #fff 60%, #fef9f0 100%);
+  border: 1px solid rgba(232, 83, 106, 0.15);
+  border-radius: 1rem;
+  box-shadow:
+    0 4px 15px rgba(232, 83, 106, 0.08),
+    0 1px 3px rgba(201, 59, 85, 0.06);
+  transition: all 0.3s ease;
+}
+
+.pink-city-card:hover {
+  border-color: rgba(232, 83, 106, 0.3);
+  box-shadow:
+    0 8px 30px rgba(232, 83, 106, 0.15),
+    0 2px 8px rgba(201, 59, 85, 0.1);
+  transform: translateY(-3px);
+}
+
+/* ─── Scrollbar styling ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--jaipur-pink-pale); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(var(--jaipur-pink), var(--jaipur-pink-deep));
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--jaipur-pink-deep); }

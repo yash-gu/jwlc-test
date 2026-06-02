@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import Statistics from './components/Statistics';
 import About from './components/About';
 import Services from './components/Services';
+import HowItWorks from './components/HowItWorks';
+import HighlightStories from './components/HighlightStories';
+import Testimonials from './components/Testimonials';
 import Gallery from './components/Gallery';
 import Video from './components/Video';
-import Testimonials from './components/Testimonials';
-import Statistics from './components/Statistics';
-import CTABanner from './components/CTABanner';
 import Contact from './components/Contact';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
@@ -24,17 +25,37 @@ function App() {
   }, [darkMode]);
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className={`${darkMode ? 'dark' : ''} jaipur-bg min-h-screen`}>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
+
+      {/* 1. Hook — Who we are & what we promise */}
       <Hero />
+
+      {/* 2. Instant trust — numbers speak before words */}
+      <Statistics />
+
+      {/* 3. Build trust — who we are & who guides you */}
       <About />
+
+      {/* 4. What we offer */}
       <Services />
+
+      {/* 5. Remove skepticism — show the simple path */}
+      <HowItWorks />
+
+      {/* 6. Proof — real people, dramatic results */}
+      <HighlightStories />
+
+      {/* 7. More social proof — community voices */}
+      <Testimonials />
+
+      {/* 8. Visual evidence — gallery & video */}
       <Gallery />
       <Video />
-      <Testimonials />
-      <Statistics />
-      <CTABanner />
+
+      {/* 9. Final conversion — contact form */}
       <Contact />
+
       <Footer />
       <FloatingWhatsApp />
     </div>
