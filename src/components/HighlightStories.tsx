@@ -25,6 +25,7 @@ const stories = [
   {
     id: 2,
     image: '/hilight/h3.jpeg',
+    imagec: '/hilight/h3b.jpeg',
     name: 'Mr. Manpreet Singh Chhabra',
     tag: 'Jaipur Wellness Community',
     stats: [
@@ -110,20 +111,19 @@ export default function HighlightStories() {
               style={{ animationDelay: `${index * 120}ms` }}
             >
               {/* ── Image(s) — fully visible ── */}
-              <div className={`w-full ${(story as any).imageb ? 'grid grid-cols-2' : ''}`}>
-                <img
-                  src={story.image}
-                  alt={story.name}
-                  className="w-full h-auto block"
-                />
-                {(story as any).imageb && (
-                  <img
-                    src={(story as any).imageb}
-                    alt={`${story.name} — after`}
-                    className="w-full h-auto block"
-                  />
-                )}
-              </div>
+              {(() => {
+                const b = (story as any).imageb;
+                const c = (story as any).imagec;
+                const count = 1 + (b ? 1 : 0) + (c ? 1 : 0);
+                const gridClass = count === 3 ? 'grid grid-cols-3' : count === 2 ? 'grid grid-cols-2' : '';
+                return (
+                  <div className={`w-full ${gridClass}`}>
+                    <img src={story.image} alt={story.name} className="w-full h-auto block" />
+                    {b && <img src={b} alt={`${story.name} — transformation`} className="w-full h-auto block" />}
+                    {c && <img src={c} alt={`${story.name} — after`} className="w-full h-auto block" />}
+                  </div>
+                );
+              })()}
 
               {/* ── Card body ── */}
               <div className="p-6 flex flex-col flex-1">
