@@ -1,7 +1,7 @@
 import { Star } from 'lucide-react';
 
 export default function Testimonials() {
-  const avatar = new URL('./images/WhatsApp Image 2026-05-27 at 10.09.23.jpeg', import.meta.url).href;
+  const avatar = new URL('../../const.png', import.meta.url).href;
 
   const testimonials = [
     { name: 'Deepak Gupta',       achievement: 'Local Guide • 11 reviews',  rating: 5, comment: 'Amazing Community and Shandaar coach' },
