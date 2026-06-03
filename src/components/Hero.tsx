@@ -58,7 +58,7 @@ function HawaMahalSilhouette({ className = '' }: { className?: string }) {
 }
 
 export default function Hero() {
-  const heroImages = import.meta.glob('./Screenshot*', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+  const heroImages = import.meta.glob('./WhatsApp Image 2026-06-02 at 18.57.53.jpeg', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
   const heroImage = Object.values(heroImages)[0];
 
   return (
