@@ -2,13 +2,7 @@ export default function Gallery() {
   const images = [
     { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.09.23.jpeg', import.meta.url).href, title: 'Transformation Journey' },
     { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.09.24.jpeg', import.meta.url).href, title: 'Community Session' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.10.18 (1).jpeg', import.meta.url).href, title: 'Wellness Workshop' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.10.18.jpeg', import.meta.url).href, title: 'Group Coaching' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.10.19 (1).jpeg', import.meta.url).href, title: 'Success Stories' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.10.19 (2).jpeg', import.meta.url).href, title: 'Healthy Living' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.10.19.jpeg', import.meta.url).href, title: 'Diet Planning' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.10.20 (1).jpeg', import.meta.url).href, title: 'Lifestyle Change' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.10.20.jpeg', import.meta.url).href, title: 'Royal Wellness' },
+    
   ];
 
   return (
