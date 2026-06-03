@@ -1,9 +1,12 @@
 export default function Gallery() {
-  const images = [
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.09.23.jpeg', import.meta.url).href, title: 'Transformation Journey' },
-    { url: new URL('./images/WhatsApp Image 2026-05-27 at 10.09.24.jpeg', import.meta.url).href, title: 'Community Session' },
-    
-  ];
+  const imageModules = import.meta.glob('./images/*.{jpg,jpeg}', { eager: true, query: '?url', import: 'default' }) as Record<string, string>;
+
+  const images = Object.entries(imageModules)
+    .sort(([a], [b]) => a.localeCompare(b, undefined, { numeric: true }))
+    .map(([, url], index) => ({
+      url,
+      title: index === 0 ? 'Transformation Journey' : 'Community Session',
+    }));
 
   return (
     <section id="gallery" className="py-24 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#1a0d10] relative overflow-hidden hawa-mahal-border">
