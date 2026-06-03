@@ -130,7 +130,7 @@ export default function Contact() {
             </span>
           </h2>
           <p className="text-base text-jaipur-dark/60 dark:text-gray-400 font-ui max-w-xl mx-auto">
-            Mrs. Dipali started at 53. Mr. Manpreet started at 172 kg. They didn't wait for the perfect moment — they just started. So can you.
+            Mrs. Dipali started at the age of 53. Mr. Manpreet started at 172 kg. They didn't wait for the perfect moment — they just started. So can you.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             {[
