@@ -185,7 +185,7 @@ export default function Hero() {
                   <img
                     src={heroImage}
                     alt="Jaipur Wellness Community"
-                    className="w-full h-full object-cover object-center "
+                    className="w-full h-full object-cover object-top"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-jaipur-pink-pale to-jaipur-pink-light">
