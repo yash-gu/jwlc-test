@@ -47,13 +47,13 @@ export default function Gallery() {
           {images.map((image, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-2xl shadow-sandstone hover:shadow-sandstone-hover pink-glow-hover transform hover:scale-[1.03] transition-all duration-500 aspect-square animate-in fade-in border border-jaipur-pink/10"
+              className="group relative overflow-hidden rounded-2xl shadow-sandstone hover:shadow-sandstone-hover pink-glow-hover transform hover:scale-[1.03] transition-all duration-500 animate-in fade-in border border-jaipur-pink/10 min-h-96 flex items-center justify-center bg-jaipur-dark/5 dark:bg-jaipur-dark/20"
               style={{ animationDelay: `${index * 80}ms` }}
             >
               <img
                 src={image.url}
                 alt={image.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
               />
 
               {/* Hover overlay with Hawa Mahal arch shape */}
