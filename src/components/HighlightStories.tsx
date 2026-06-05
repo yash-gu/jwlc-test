@@ -182,8 +182,9 @@ export default function HighlightStories() {
             >
               {/* ── Image(s) — fully visible ── */}
               {(() => {
-                const b = (story as any).imageb;
-                const c = (story as any).imagec;
+                const storyData = story as { image: string; imageb?: string; imagec?: string; name: string };
+                const b = storyData.imageb;
+                const c = storyData.imagec;
                 const count = 1 + (b ? 1 : 0) + (c ? 1 : 0);
                 const gridClass = count === 3 ? 'grid grid-cols-3' : count === 2 ? 'grid grid-cols-2' : '';
                 return (
