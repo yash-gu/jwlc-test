@@ -17,14 +17,16 @@ export default function Navbar({ darkMode, setDarkMode }: NavbarProps) {
   }, []);
 
   const navLinks = [
-    { name: 'Home',         href: '#home' },
-    { name: 'About Us',     href: '#about' },
-    { name: 'Services',     href: '#services' },
-    { name: 'How It Works', href: '#how-it-works' },
-    { name: 'Stories',      href: '#stories' },
-    { name: 'Gallery',      href: '#gallery' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact',      href: '#contact' },
+    { name: 'Home',           href: '#home' },
+    { name: 'About Us',       href: '#about' },
+    { name: 'Services',       href: '#services' },
+    { name: 'Calculators',    href: '#calculators' },
+    { name: 'WhatsApp Hub',   href: '#whatsapp-hub' },
+    { name: 'How It Works',   href: '#how-it-works' },
+    { name: 'Stories',        href: '#stories' },
+    { name: 'Gallery',        href: '#gallery' },
+    { name: 'Testimonials',   href: '#testimonials' },
+    { name: 'Contact',        href: '#contact' },
   ];
 
   return (
