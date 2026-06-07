@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Statistics from './components/Statistics';
 import About from './components/About';
 import Services from './components/Services';
+import WellnessTools from './components/WellnessTools';
 import HowItWorks from './components/HowItWorks';
 import HighlightStories from './components/HighlightStories';
 import Testimonials from './components/Testimonials';
@@ -39,6 +40,9 @@ function App() {
 
       {/* 4. What we offer */}
       <Services />
+
+      {/* Wellness Hub — Interactive Calculators & WhatsApp Community */}
+      <WellnessTools />
 
       {/* 5. Remove skepticism — show the simple path */}
       <HowItWorks />
