@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import Statistics from './components/Statistics';
 import About from './components/About';
 import Services from './components/Services';
-/
 import WellnessTools from './components/WellnessTools';
 import HowItWorks from './components/HowItWorks';
 import HighlightStories from './components/HighlightStories';
